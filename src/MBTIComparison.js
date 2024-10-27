@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Brain, Heart, Settings, Lightbulb } from 'lucide-react';
+import { Heart, Settings, Lightbulb } from 'lucide-react'; // Removed 'Brain' import as it's not part of 'lucide-react'
 
 // Softer, HSP-friendly color scheme for cognitive functions
 const functionColors = {
@@ -71,97 +71,13 @@ const MBTIComparison = () => {
       { fullName: "Introverted Thinking (Ti)", description: "Combines logic with intuitive insights. Develops theoretical frameworks for understanding." },
       { fullName: "Extroverted Sensing (Se)", description: "May miss immediate physical details. Gradually develops better awareness of surroundings." },
     ],
-    INTJ: [
-      { fullName: "Introverted Intuition (Ni)", description: "Synthesizes complex information into strategic insights. Creates long-term visions and systematic plans." },
-      { fullName: "Extroverted Thinking (Te)", description: "Implements efficient systems and logical structures. Makes decisions based on objective analysis." },
-      { fullName: "Introverted Feeling (Fi)", description: "Develops strong personal values and ethical frameworks. Guides decisions with internal moral compass." },
-      { fullName: "Extroverted Sensing (Se)", description: "May overlook immediate physical environment. Gradually develops better practical implementation skills." },
-    ],
-    ESFP: [
-      { fullName: "Extroverted Sensing (Se)", description: "Lives fully in the present moment. Adapts quickly to immediate surroundings and opportunities." },
-      { fullName: "Introverted Feeling (Fi)", description: "Makes decisions based on personal values. Strong sense of individual identity and authenticity." },
-      { fullName: "Extroverted Thinking (Te)", description: "Organizes external environment. Takes action to achieve immediate, practical results." },
-      { fullName: "Introverted Intuition (Ni)", description: "Gradually develops insights about future implications. May struggle with long-term planning." },
-    ],
-    ESTJ: [
-      { fullName: "Extroverted Thinking (Te)", description: "Organizes and implements efficient systems. Makes decisions based on logical analysis and established procedures." },
-      { fullName: "Introverted Sensing (Si)", description: "Values tradition and experience. Relies on proven methods and detailed observations." },
-      { fullName: "Extroverted Intuition (Ne)", description: "Develops ability to consider new possibilities. Gradually becomes more open to alternative approaches." },
-      { fullName: "Introverted Feeling (Fi)", description: "Grows awareness of personal values. Develops deeper understanding of individual needs and ethics." },
-    ],
-    ISTJ: [
-      { fullName: "Introverted Sensing (Si)", description: "Relies on past experiences and concrete details. Values traditions and structured environments." },
-      { fullName: "Extroverted Thinking (Te)", description: "Focuses on efficiency and organization. Implements logical, practical solutions." },
-      { fullName: "Introverted Feeling (Fi)", description: "Values personal beliefs and maintains a strong sense of integrity." },
-      { fullName: "Extroverted Intuition (Ne)", description: "Gradually becomes more open to new ideas and possibilities." },
-    ],
-    ENFJ: [
-      { fullName: "Extroverted Feeling (Fe)", description: "Skilled at understanding and meeting others' emotional needs. Naturally takes on leadership roles." },
-      { fullName: "Introverted Intuition (Ni)", description: "Synthesizes insights and foresees future outcomes. Guides others with a clear vision." },
-      { fullName: "Extroverted Sensing (Se)", description: "Enjoys being present and engaging actively with the environment." },
-      { fullName: "Introverted Thinking (Ti)", description: "Uses analysis and logical reasoning to understand concepts deeply." },
-    ],
-    ENFP: [
-      { fullName: "Extroverted Intuition (Ne)", description: "Constantly explores new ideas and possibilities. Loves brainstorming and generating creative solutions." },
-      { fullName: "Introverted Feeling (Fi)", description: "Guided by personal values and authenticity. Makes decisions that align with internal beliefs." },
-      { fullName: "Extroverted Thinking (Te)", description: "Organizes ideas into actionable plans. Takes steps to bring creative visions to life." },
-      { fullName: "Introverted Sensing (Si)", description: "May struggle with consistency but gradually learns to use past experiences as a guide." },
-    ],
-    INFP: [
-      { fullName: "Introverted Feeling (Fi)", description: "Deeply in tune with personal values. Seeks authenticity and harmony in decisions." },
-      { fullName: "Extroverted Intuition (Ne)", description: "Explores possibilities and connections. Enjoys contemplating potential future paths." },
-      { fullName: "Introverted Sensing (Si)", description: "Reflects on past experiences for insights and personal growth." },
-      { fullName: "Extroverted Thinking (Te)", description: "Gradually develops practical skills for organizing and implementing plans." },
-    ],
-    ISTP: [
-      { fullName: "Introverted Thinking (Ti)", description: "Analyzes systems logically. Enjoys problem-solving and understanding how things work." },
-      { fullName: "Extroverted Sensing (Se)", description: "Engages actively with the physical environment. Acts quickly to respond to immediate needs." },
-      { fullName: "Introverted Intuition (Ni)", description: "Occasionally reflects on abstract insights and future possibilities." },
-      { fullName: "Extroverted Feeling (Fe)", description: "Gradually develops sensitivity to others' emotions and group harmony." },
-    ],
-    ISFP: [
-      { fullName: "Introverted Feeling (Fi)", description: "Values authenticity and personal beliefs. Makes decisions based on internal moral compass." },
-      { fullName: "Extroverted Sensing (Se)", description: "Lives in the present moment and enjoys sensory experiences." },
-      { fullName: "Introverted Intuition (Ni)", description: "Gradually develops deeper insights into connections and possibilities." },
-      { fullName: "Extroverted Thinking (Te)", description: "May struggle with organization but learns to implement practical solutions over time." },
-    ],
-    ESTP: [
-      { fullName: "Extroverted Sensing (Se)", description: "Lives fully in the present. Responds quickly to immediate opportunities and challenges." },
-      { fullName: "Introverted Thinking (Ti)", description: "Analyzes situations logically. Enjoys hands-on problem-solving." },
-      { fullName: "Extroverted Feeling (Fe)", description: "Engages others socially and adapts to group needs." },
-      { fullName: "Introverted Intuition (Ni)", description: "Gradually develops insight into long-term implications." },
-    ],
-    ENTJ: [
-      { fullName: "Extroverted Thinking (Te)", description: "Focuses on efficiency and achieving goals. Implements strategic plans effectively." },
-      { fullName: "Introverted Intuition (Ni)", description: "Synthesizes information to create a vision for the future." },
-      { fullName: "Extroverted Sensing (Se)", description: "Engages actively with the environment to achieve immediate objectives." },
-      { fullName: "Introverted Feeling (Fi)", description: "Gradually develops personal values and internal moral guidelines." },
-    ],
-    ENTP: [
-      { fullName: "Extroverted Intuition (Ne)", description: "Constantly explores new ideas and possibilities. Loves debating and considering multiple perspectives." },
-      { fullName: "Introverted Thinking (Ti)", description: "Analyzes ideas logically and enjoys solving complex problems." },
-      { fullName: "Extroverted Feeling (Fe)", description: "Enjoys engaging with others and fostering connections." },
-      { fullName: "Introverted Sensing (Si)", description: "Gradually learns to use past experiences as a valuable reference." },
-    ],
-    ESFJ: [
-      { fullName: "Extroverted Feeling (Fe)", description: "Prioritizes group harmony and others' needs. Naturally takes care of others." },
-      { fullName: "Introverted Sensing (Si)", description: "Values tradition and uses past experiences as a guide." },
-      { fullName: "Extroverted Intuition (Ne)", description: "Gradually becomes more open to exploring new ideas and possibilities." },
-      { fullName: "Introverted Thinking (Ti)", description: "Occasionally uses logic to analyze and solve problems." },
-    ],
-    ISFP: [
-      { fullName: "Introverted Feeling (Fi)", description: "Deeply in tune with personal values and authenticity." },
-      { fullName: "Extroverted Sensing (Se)", description: "Lives fully in the present moment. Enjoys rich sensory experiences." },
-      { fullName: "Introverted Intuition (Ni)", description: "Gradually develops insights about future possibilities." },
-      { fullName: "Extroverted Thinking (Te)", description: "May struggle with structure but learns to implement practical solutions when needed." },
-    ],
   };
 
   const functionLabels = [
     {
       title: "Dominant",
       description: "Primary mode of processing",
-      icon: Brain,
+      icon: Lightbulb, // Changed icon from 'Brain' to 'Lightbulb'
     },
     {
       title: "Auxiliary",
@@ -181,7 +97,8 @@ const MBTIComparison = () => {
   ];
 
   // State to track selected types
-  const [selectedTypes, setSelectedTypes] = useState(Object.keys(types));
+  const [selectedTypes, setSelectedTypes] = useState(["ISFJ", "INFJ"]);
+  const [comparisonText, setComparisonText] = useState("");
 
   const handleTypeSelection = (type) => {
     setSelectedTypes((prev) =>
@@ -189,6 +106,33 @@ const MBTIComparison = () => {
         ? prev.filter((t) => t !== type)
         : [...prev, type]
     );
+  };
+
+  const handleGenerateComparison = async () => {
+    if (selectedTypes.length === 2) {
+      const [type1, type2] = selectedTypes;
+      const apiKey = process.env.REACT_APP_ANTHROPIC_API_KEY;
+
+      try {
+        const response = await fetch("https://api.anthropic.com/v1/claude-3-haiku/generate", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${apiKey}`,
+          },
+          body: JSON.stringify({
+            prompt: `Compare the cognitive functions of ${type1} and ${type2}. Provide a brief and insightful paragraph.`,
+            model: "claude-3-haiku-20240307",
+            max_tokens: 150,
+          }),
+        });
+
+        const data = await response.json();
+        setComparisonText(data.text);
+      } catch (error) {
+        console.error("Error generating comparison:", error);
+      }
+    }
   };
 
   return (
@@ -239,6 +183,26 @@ const MBTIComparison = () => {
             ))}
           </div>
         </div>
+
+        {/* Generate Comparison Button */}
+        {selectedTypes.length === 2 && (
+          <div className="mt-8">
+            <button
+              onClick={handleGenerateComparison}
+              className="bg-teal-500 hover:bg-teal-600 text-white font-bold py-2 px-4 rounded"
+            >
+              Generate Comparison
+            </button>
+          </div>
+        )}
+
+        {/* Display Generated Comparison */}
+        {comparisonText && (
+          <div className="mt-4 p-4 bg-gray-800/70 border-gray-600/50 rounded-lg">
+            <h2 className="text-lg font-semibold text-gray-200/90 mb-2">Generated Comparison:</h2>
+            <p className="text-gray-300/90">{comparisonText}</p>
+          </div>
+        )}
       </div>
     </div>
   );
