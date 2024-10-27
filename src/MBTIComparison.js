@@ -113,6 +113,11 @@ const MBTIComparison = () => {
       const [type1, type2] = selectedTypes;
       const apiKey = process.env.REACT_APP_ANTHROPIC_API_KEY;
 
+      if (!apiKey) {
+        console.error("API key is missing. Please set the REACT_APP_ANTHROPIC_API_KEY environment variable.");
+        return;
+      }
+
       try {
         const response = await fetch("https://api.anthropic.com/v1/claude-3-haiku/generate", {
           method: "POST",
