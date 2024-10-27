@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/static/css/main.03b2fe21.css",
-    "main.js": "/static/js/main.ad360607.js",
-    "static/js/453.6445e5cb.chunk.js": "/static/js/453.6445e5cb.chunk.js",
-    "index.html": "/index.html",
-    "main.03b2fe21.css.map": "/static/css/main.03b2fe21.css.map",
-    "main.ad360607.js.map": "/static/js/main.ad360607.js.map",
-    "453.6445e5cb.chunk.js.map": "/static/js/453.6445e5cb.chunk.js.map"
+    "main.css": "/MBTI-Compare/static/css/main.03b2fe21.css",
+    "main.js": "/MBTI-Compare/static/js/main.aa2f73db.js",
+    "static/js/453.6445e5cb.chunk.js": "/MBTI-Compare/static/js/453.6445e5cb.chunk.js",
+    "index.html": "/MBTI-Compare/index.html",
+    "main.03b2fe21.css.map": "/MBTI-Compare/static/css/main.03b2fe21.css.map",
+    "main.aa2f73db.js.map": "/MBTI-Compare/static/js/main.aa2f73db.js.map",
+    "453.6445e5cb.chunk.js.map": "/MBTI-Compare/static/js/453.6445e5cb.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.03b2fe21.css",
-    "static/js/main.ad360607.js"
+    "static/js/main.aa2f73db.js"
   ]
 }
